@@ -1,9 +1,0 @@
-<div class=\"content-item\"><div class=\"content\">
-</div></div>
-<html><head><meta charset=\"UTF-8\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"><title>
-</title><link rel=\"favicon\" href=\"/static/favicon.ico\"><link rel=\"stylesheet\" href=\"/static/css/styles.css\"></head><body>
-<script type=\"module\">\n\t\timport {main} from \"/static/js/main.js\";\n\t\tawait main();\n\t</script></body></html>
-<html><head><meta charset=\"UTF-8\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"><title>
-</title><link rel=\"stylesheet\" href=\"/static/css/styles.css\"></head><body>
-<script type=\"module\">\n\t\timport {main} from \"/static/js/main.js\";\n\t\tawait main();\n\t</script></body></html>
-<div id=\"gameContainer\"><canvas id=\"gameCanvas\"></canvas></div>
