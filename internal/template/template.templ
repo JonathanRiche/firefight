@@ -1,0 +1,69 @@
+package template
+
+import "richetechguy/internal/blink"
+
+templ ContentItemComponent(item blink.ContentItem) {
+	<div class="content-item">
+		<div class="content">
+			@templ.Raw(item.Body.HTML)
+		</div>
+	</div>
+}
+
+templ Layout(title string) {
+	<html>
+		<head>
+			<meta charset="UTF-8"/>
+			<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+			<title>{ title }</title>
+			<link rel="favicon" href="/static/favicon.ico"/>
+			<link rel="stylesheet" href="/static/css/styles.css"/>
+		</head>
+		<body>
+			{ children... }
+			<script type="module">
+		import {main} from "/static/js/main.js";
+		await main();
+	</script>
+		</body>
+	</html>
+}
+
+templ BlinkLayout(title string, styles string) {
+	<html>
+		<head>
+			<meta charset="UTF-8"/>
+			<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+			<title>{ title }</title>
+			<link rel="stylesheet" href="/static/css/styles.css"/>
+		</head>
+		<body>
+			{ children... }
+			<script type="module">
+		import {main} from "/static/js/main.js";
+		await main();
+	</script>
+		</body>
+	</html>
+}
+
+templ Body() {
+	<div id="gameContainer">
+		<canvas id="gameCanvas"></canvas>
+	</div>
+}
+
+// route!("GET /")
+// middleware!(ParseForm)
+templ BlinkHome(title string, item blink.ContentItem) {
+	@BlinkLayout(title, item.Body.CSS) {
+		@ContentItemComponent(item)
+	}
+}
+
+//TODO: Add some nave el later and gui menu
+templ Home(title string) {
+	@Layout(title) {
+		@Body()
+	}
+}

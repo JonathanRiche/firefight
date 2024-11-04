@@ -1,0 +1,22 @@
+#gameCanvas {
+    image-rendering: pixelated;  /* keeps pixels sharp */
+    image-rendering: crisp-edges;
+    width: 928px;  /* 29 tiles * 8 pixels * 4 (scale factor) */
+    height: 192px; /* 6 tiles * 8 pixels * 4 (scale factor) */
+}
+
+#debugText {
+    position: fixed;
+    top: 0;
+    right: 0;
+    color: black;
+    font-size: 12px;
+    padding: 10px;
+}
+@media (max-width: 768px) {
+    #gameCanvas {
+        width: 400px;
+        height: 200px;
+    }
+}	
+
